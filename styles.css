@@ -49,6 +49,17 @@ table {
 
 /* END RESET */
 
-header h1 {
-    font-size: 50px;
+.key-gen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30%;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }

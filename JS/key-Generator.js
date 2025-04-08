@@ -1,85 +1,58 @@
 
 
 
-const charactersInput = document.getElementById("charactersInput") //Nodo
+const charactersInput = document.getElementById("charactersInput")
 const btnPassGen = document.getElementById('btnPassGen')
-let charactersValue = 0 // Valor numérico del input
+
+let charactersValue = 0 // Variable para reasignar el valor numérico del input
     
 charactersInput.addEventListener('change', () =>{
     charactersValue = parseInt(charactersInput.value)
+    
     if ( charactersValue < 12 || charactersValue > 50) {
         alert("El valor introducido debe estar entre 12 y 50 caracteres.");
         return;
-    }
-    console.log(charactersValue)
+    }   
+    console.log(charactersValue) // si que captura el valor del input en este punto
 })
 
-/*
 btnPassGen.addEventListener('click', () => {
-    generatePassword()
+    const password = buildPassword(charactersValue)
+    console.log(password)
     
 })
-*/
 
-
-/*
-- Tendrá entre 12 caracteres como mínimo y 50 de máximo. Se podrá elegir el número de caracteres
-- Se compondrá de mayúsculas, minúsculas, números y símbolos. Mínimo una de cada.
-- Guarda cada uno de los datos (mayúsculas, minúsculas, símbolos y núemeros) en una variable para poder recorrerlos.
-- Usa bucles y condicionales
-- Math.random() Para generar aleatoriedad
-
-*/
-
-const mayusculas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-const minusculas = "abcdefghijklmnopqrstuvwxyz"
-const numeros = "0123456789"
-const simbolos = "!@#$%^&*()-_=+"
-
-let password = "" // Contenedor caracteres
-
-password += getRandomChar(mayusculas) // += Asignación de adición
-password += getRandomChar(minusculas)
-password += getRandomChar(numeros)
-password += getRandomChar(simbolos)
+// Función para generar un carácter aleatorio
 
 function getRandomChar (character) {
-    const randomIndex = Math.floor(Math.random() * character.length);
-    return character.charAt(randomIndex);
+    const index = Math.floor(Math.random() * character.length);
+    return character.charAt(index);
 }
 
-console.log(password)
-
-
-for ( i = password[4] ; password.length < charactersValue; i ++ ) {
-    if (password.length < 12) {
-        password += getRandomChar(mayusculas + minusculas + numeros + simbolos)
-        console.log(password)
-
+function buildPassword (charactersValue) {
+    const mayusculas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    const minusculas = "abcdefghijklmnopqrstuvwxyz"
+    const numeros = "0123456789"
+    const simbolos = "!@#$%^&*()-_=+"
+    
+    let password = "" // Contenedor caracteres
+    
+    // Añadir el mínimo de caracteres a password
+    
+    password += getRandomChar(mayusculas) // += Asignación de adición
+    password += getRandomChar(minusculas)
+    password += getRandomChar(numeros)
+    password += getRandomChar(simbolos)
+    
+    // <--- POSIBLE PROBLEMA EN EL BUCLE --->
+    
+    for ( let i = password.length ; password.length < charactersValue; i ++ ) {
+        if (password.length < charactersValue) {
+            password += getRandomChar(mayusculas + minusculas + numeros + simbolos)
+        }
     }
-   /*
-    if (password.length < charactersValue) {
-        password += getRandomChar(mayusculas)
-    }
-    console.log(password)
-    */
-
+    return password
 }
-
-function addRestPassword () {
-
-
-
-}
-addRestPassword()
-
-
-
-
-function generatePassword () {
-        
-}
-generatePassword()
 
 
 

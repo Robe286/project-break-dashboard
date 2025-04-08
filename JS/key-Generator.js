@@ -11,8 +11,8 @@ charactersInput.addEventListener('change', () =>{
         alert("El valor introducido debe estar entre 12 y 50 caracteres.");
         return;
     }
+    console.log(charactersValue)
 })
-
 
 /*
 btnPassGen.addEventListener('click', () => {
@@ -36,17 +36,43 @@ const minusculas = "abcdefghijklmnopqrstuvwxyz"
 const numeros = "0123456789"
 const simbolos = "!@#$%^&*()-_=+"
 
+let password = "" // Contenedor caracteres
 
-/*
-const randomCharacts = (min, max) => (Math.random() * (min, max) + min)
-console.log(randomCharacts( mayusculas.charAt(0), charactersValue))
-*/
+password += getRandomChar(mayusculas) // += Asignación de adición
+password += getRandomChar(minusculas)
+password += getRandomChar(numeros)
+password += getRandomChar(simbolos)
 
-const randomIndex = Math.floor(Math.random() * mayusculas.length);
-console.log(mayusculas.charAt(randomIndex))
-//return characters.charAt(randomIndex);
+function getRandomChar (character) {
+    const randomIndex = Math.floor(Math.random() * character.length);
+    return character.charAt(randomIndex);
+}
 
-  
+console.log(password)
+
+
+for ( i = password[4] ; password.length < charactersValue; i ++ ) {
+    if (password.length < 12) {
+        password += getRandomChar(mayusculas + minusculas + numeros + simbolos)
+        console.log(password)
+
+    }
+   /*
+    if (password.length < charactersValue) {
+        password += getRandomChar(mayusculas)
+    }
+    console.log(password)
+    */
+
+}
+
+function addRestPassword () {
+
+
+
+}
+addRestPassword()
+
 
 
 

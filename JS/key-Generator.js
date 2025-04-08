@@ -19,6 +19,9 @@ charactersInput.addEventListener('change', () =>{
 btnPassGen.addEventListener('click', () => {
     const password = buildPassword(charactersValue)
     console.log(password)
+    //const placeResult = document.getElementById('result')
+    //placeResult.innerHTML = `<p>Contraseña Generada: ${password}</p>`
+
     
 })
 

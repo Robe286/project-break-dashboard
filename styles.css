@@ -70,24 +70,32 @@ body {
 
 /* Widget Weather */
 
-.weather {
-	background-color: aqua;
-	
-}
 
 .currentWeather {
-	background-color: red;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: 50%;
-	margin: 50px;
+	width: 200px;
+	margin: 50%;
 	padding: 20px;
-	gap: 20px
-;
+	gap: 15px;
+	background-color: rgba(210, 224, 17, 0.486);
+	border-radius: 10px;
 
 }
+
+.currentWeather h2 {
+	font-weight: 500;
+	font-size: 18px;
+	color: blueviolet;
+}
+
+.currentWeather p {
+	font-size: 16px;
+	color: black;
+}
+
 .currentWeather img {
-	width: 64px;
-	height: 64px;
+	width: 70px;
+	height: 70px;
 }

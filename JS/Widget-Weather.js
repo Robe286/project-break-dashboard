@@ -16,7 +16,7 @@ const getData = async () => {
         const { temp_c, humidity, precip_mm, wind_kph } = weatherData.current
         
         currentWeather.innerHTML = `
-        <h2>${name} ${country }</h2>
+        <h2>${name} - ${country }</h2>
         <p>${text}</p>
         <img src="https:${icon}" alt="${text}">
         `

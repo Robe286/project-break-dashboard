@@ -1,7 +1,4 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap');
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -49,6 +46,13 @@ table {
 
 /* END RESET */
 
+body {
+	font-family: "Roboto", sans-serif;
+	font-weight: 300;
+}
+
+/* Generador de contraseñas */
+
 .key-gen {
     display: flex;
     flex-direction: column;
@@ -62,4 +66,28 @@ table {
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+/* Widget Weather */
+
+.weather {
+	background-color: aqua;
+	
+}
+
+.currentWeather {
+	background-color: red;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 50%;
+	margin: 50px;
+	padding: 20px;
+	gap: 20px
+;
+
+}
+.currentWeather img {
+	width: 64px;
+	height: 64px;
 }

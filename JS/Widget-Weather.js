@@ -12,26 +12,8 @@ const getData = async () => {
         }
         const weatherData = await response.json()
         console.log(weatherData)
-        const { name, country } = weatherData.location
-        const { text, icon } = weatherData.current.condition  // Estado del clima y la imagen
-        const { temp_c, humidity, precip_mm, wind_kph } = weatherData.current
-        
-        currentWeather.innerHTML = `
-        <h2>${name} - ${country }</h2>
-        <p>${text}</p>
-        <div class="icon-temp">
-        <img src="https:${icon}" alt="${text}">
-        <p>${temp_c}</p>
-        </div>
-        <ul>
-        <li>Viento: ${wind_kph}</li>
-        <li>Humedad: ${humidity}</li>
-        <li>Precipitaciones: ${precip_mm}</li>
-        </u>
-    
-        
+        currentTempalte(weatherData)
 
-        `
         
     }
     catch (error) {
@@ -42,6 +24,25 @@ const getData = async () => {
 getData()
 
 
-
+function currentTempalte (weatherData) {
+    
+    const { name, country } = weatherData.location
+    const { text, icon } = weatherData.current.condition
+    const { temp_c, humidity, precip_mm, wind_kph } = weatherData.current
+    
+    currentWeather.innerHTML = `
+    <h2>${name} - ${country }</h2>
+    <p>${text}</p>
+    <div class="icon-temp">
+    <img src="https:${icon}" alt="${text}">
+    <p>${temp_c}</p>
+    </div>
+    <ul>
+    <li>Viento: ${wind_kph}</li>
+    <li>Humedad: ${humidity}</li>
+    <li>Precipitaciones: ${precip_mm}</li>
+    </u>
+    `
+}
 
 

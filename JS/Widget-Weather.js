@@ -6,22 +6,20 @@ const currentWeather = document.getElementById('currentWeather')
 const forecastWeather = document.getElementById('forecastWeather')
 
 const getData = async () => {
+   
     try {
         const response = await fetch(EndPoint)
         if (!response.ok) {
             throw new Error ('Ha surgido un problema', response.status)
         }
         const weatherData = await response.json()
-        //console.log(weatherData)
         currentTemplate(weatherData)
         forecastTemplate(weatherData)
-        
-        
     }
     catch (error) {
         console.log(error)
     }
-    
+       
 }
 getData()
 
@@ -57,11 +55,11 @@ function forecastTemplate (weatherData) {
         const arrTime = time.split(' ')
         const onlyHour = arrTime[1]
         forecastWeather.innerHTML += `
-        <div>
+        <li>
             <p>${onlyHour}</p>
             <img src="https:${icon}" alt="${text}">
             <p>${temp_c}</p>
-        </div>
+        </li>
         `
     })
 }

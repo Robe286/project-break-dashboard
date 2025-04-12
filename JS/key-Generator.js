@@ -3,6 +3,11 @@ const btnPassGen = document.getElementById('btnPassGen')
 let charactersValue = 0
     
 // Eventos de escucha
+btnPassGen.addEventListener('click', () => {
+    const password = buildPassword(charactersValue)
+    const placeResult = document.getElementById('result')
+    placeResult.innerHTML = `<p>Contraseña Generada: ${password}</p>`
+})
 
 charactersInput.addEventListener('change', () =>{
     charactersValue = parseInt(charactersInput.value)
@@ -12,11 +17,6 @@ charactersInput.addEventListener('change', () =>{
     }
 })
 
-btnPassGen.addEventListener('click', () => {
-    const password = buildPassword(charactersValue)
-    const placeResult = document.getElementById('result')
-    placeResult.innerHTML = `<p>Contraseña Generada: ${password}</p>`
-})
 
 // Función para generar un carácter aleatorio
 

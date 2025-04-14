@@ -2,7 +2,6 @@ const inputTitle = document.getElementById('inputTitle');
 const inputURL = document.getElementById('inputURL');
 const addBtn = document.getElementById('addBtn');
 const listURL = document.getElementById('list-url')
-const btnDelete = document.getElementsByClassName('btn-delete')
 
 const saveLinks = JSON.parse(localStorage.getItem('links')) || [];
 

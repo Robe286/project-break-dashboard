@@ -1,9 +1,16 @@
 const inputTitle = document.getElementById('inputTitle');
 const inputURL = document.getElementById('inputURL');
 const addBtn = document.getElementById('addBtn');
-const listURL = document.getElementById('listURL')
+const listURL = document.getElementById('list-url')
 
 const saveLinks = JSON.parse(localStorage.getItem('links')) || [];
+
+addBtn.addEventListener('click', () =>{
+    saveInStorage()
+    showLinks(saveLinks)
+})
+
+showLinks(saveLinks)
 
 function saveInStorage () {
     const title = inputTitle.value;
@@ -17,73 +24,27 @@ function saveInStorage () {
         alert("Debes rellenar los dos campos");
         return;
     }
-    return saveLinks;
 }
 
-function showLinks (saveLinks) { // Mostrar los links en la página
-    
-    listURL.innerHTML = '';
-    saveLinks.forEach((link) =>{
+function showLinks (saveLinks) {
+    listURL.innerHTML = ''; 
+    saveLinks.forEach((link, index) =>{
         listURL.innerHTML += `
         <li>
             <a href='${link.url}' target='_blank'>${link.title}</a>
-            <button>X</button>
+            <button class='btn-delete' data-index='${index}'>x</button>
         </li>
         `;
     })
 }
 
+const btnDelete = document.getElementsByClassName('btn-delete')
 
-addBtn.addEventListener('click', () =>{
-    saveInStorage()
-    showLinks(saveLinks)
-
-})
-
-showLinks(saveLinks)
-
-//localStorage.setItem(`${title}`, `https://${url}`)
-
-
-
-
-
-
-
-
-/*
-addBtn.addEventListener('click', () =>{
-    let title = inputTitle.value
-    let url = inputURL.value
-
-    if (!title || !url) {
-        alert("Debes rellenar los dos campos para continuar");
-        return;
+listURL.addEventListener('click', (e) => {
+    if(e.target.classList.contains('btn-delete')) {
+        const index = e.target.dataset.index;
+        saveLinks.splice(index, 1);
+        localStorage.setItem('links', JSON.stringify(saveLinks));
     }
-    saveListToStorage(title, url)
-    renderLinkToDOM(title, url)
 })
-//localStorage.clear()
-function saveListToStorage (title, url) {
-    localStorage.setItem(`${title}`, `https://${url}`)
-}
-
-function loadListFromStorage () {
-
-}
-loadListFromStorage ()
-
-
-function renderLinkToDOM (title, url) { // Mostrar los links en la página
-    listURL.innerHTML = ''
-    listURL.innerHTML += `
-    <li>
-        <a href='https://${url}' target='_blank'>${title}</a>
-        <button id='linkDelete'>x</button>
-    </li>
-    `
-}
-*/
-
-
 

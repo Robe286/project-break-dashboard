@@ -155,13 +155,17 @@ body {
 
 /* LISTADO DE ENLACES */
 
-
-
-.linkForm {
+.link-container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	gap: 20px;
+}
+
+.link-input {
+	display: flex;
+	flex-direction: column;
 	gap: 20px;
 }
 

@@ -9,11 +9,20 @@
 <body>
     <main id="linksMain" class="linksMain">
         <section id="linkForm" class="linkForm">
-            <h1>Crea tu lista de Enlaces</h1>
-            <input id="inputTitle" type="text" placeholder="Escribe un título para la URL" name="inputTitle" value="" required>
-            <input id="inputURL" type="text" placeholder="Escribe la URL" name="inputURL" value="" required>
-            <button id="addBtn">Añadir Enlace</button>
-            <ul id="listURL" class="listURL"></ul>
+            <div id="link-container" class="link-container">
+                <div class="link-title">
+                    <h1>Crea tu lista de Enlaces</h1>
+                </div>
+                <div id="link-input" class="link-input">
+                    <input id="inputTitle" type="text" placeholder="Escribe un título para la URL" name="inputTitle" value="" required>
+                    <input id="inputURL" type="text" placeholder="Escribe la URL" name="inputURL" value="" required>
+                    <button id="addBtn">Añadir Enlace</button>
+                </div>
+                <div id="link-list" class="link-list">
+                    <ul id="list-url" class="list-url"></ul>
+                </div>
+
+            </div>
         </section>
     </main>
 <script src="./JS/link-list.js"></script>

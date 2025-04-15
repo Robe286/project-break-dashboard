@@ -1,33 +1,26 @@
-const date = getDate.toLocaleDateString()
-// Obtenemos las horas, minutos y segundos. Devuelve un entero
-
-/*
 function activateClock () {
     
+    const getDate = new Date()
+    const hours = getDate.getHours();
+    const minutes = getDate.getMinutes();
+    const seconds = getDate.getSeconds();
+    
+    const formatHours = hours < 10 ? '0' + hours : hours;
+    const formatMinutes = minutes < 10 ? '0' + minutes : minutes;
+    const formatSeconds = seconds < 10 ? '0' + seconds : seconds;
+    
+    const format
+    
+    const time = `${formatHours}:${formatMinutes}:${formatSeconds}`
+    
+    const clock = document.getElementById('clock')
+    clock.innerHTML = `<span>${time}</span>`
     
 }
-setInterval((activateClock()), 1000)
-*/
 
-const getDate = new Date()
-console.log(getDate)
-let hours = getDate.getHours();
-let minutes = getDate.getMinutes();
-let seconds = getDate.getSeconds();
-let time = '';
-// Convertimos los valores a dos dígitos
-hours = (hours <= 9) ? ('0' + hours) : hours;
-minutes = (minutes <= 9) ? ('0' + minutes) : hours;
-seconds = (seconds <= 9) ? ('0' + seconds) : seconds;
-
-time = hours + ':' + minutes + ':' + seconds;
-console.log(time)
+//setInterval('activateClock()', 1000)
 
 
-/*
-const clock = document.getElementById('clock')
-clock.innerHTML = `<span>${time}</span>`
-*/
 
 
 

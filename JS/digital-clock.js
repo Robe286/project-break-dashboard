@@ -1,28 +1,39 @@
-function activateClock () {
+function getClock () {
     
-    const getDate = new Date()
-    const hours = getDate.getHours();
-    const minutes = getDate.getMinutes();
-    const seconds = getDate.getSeconds();
+    const getData = new Date();
+    const hours = getData.getHours();
+    const minutes = getData.getMinutes();
+    const seconds = getData.getSeconds();
     
     const formatHours = hours < 10 ? '0' + hours : hours;
     const formatMinutes = minutes < 10 ? '0' + minutes : minutes;
     const formatSeconds = seconds < 10 ? '0' + seconds : seconds;
     
-    const format
+    const newTime = `${formatHours}:${formatMinutes}:${formatSeconds}`;
     
-    const time = `${formatHours}:${formatMinutes}:${formatSeconds}`
+    const clockContainer = document.getElementById('clock');
+    clockContainer.innerHTML = newTime;
     
-    const clock = document.getElementById('clock')
-    clock.innerHTML = `<span>${time}</span>`
-    
+    getDate(getData);    
 }
 
-//setInterval('activateClock()', 1000)
+setInterval('getClock()', 1000)
+getClock();
 
-
-
-
+function getDate (getData) {
+    
+    const dayMonth = getData.getDate();
+    const month = getData.getMonth();
+    const year = getData.getFullYear();
+    
+    const formatDayMonth = dayMonth < 10 ? '0' + dayMonth : dayMonth;
+    const formatMonth = month < 10 ? '0' + (month + 1) : month;
+    
+    const newDate = `${formatDayMonth}/${formatMonth}/${year}`;
+    
+    const dateContainer = document.getElementById('date');
+    dateContainer.innerHTML = newDate;
+}   
 
 
 

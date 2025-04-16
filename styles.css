@@ -178,3 +178,40 @@ body {
 }
 
 /* RELOJ DIGITAL */
+
+.main-clock {
+	display: grid;
+	place-items: center;
+	height: 100vh;
+	background-color: grey;
+}
+
+.digital-clock {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+	width: 350px;
+	height: 200px;
+	gap: 30px;
+	background-color: rgba(0, 0, 0, 0.355);
+	border-radius: 10px;
+	box-shadow:inset;
+}
+
+.clock {
+	font-size: 60px;
+	font-weight: 400;
+	color: rgb(40, 238, 109);
+}
+
+.date {
+	font-size: 26px;
+	color: white;
+}
+
+.tip {
+	font-size: 16px;
+	color: rgb(40, 238, 109);
+}

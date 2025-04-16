@@ -1,31 +1,23 @@
 const charactersInput = document.getElementById("charactersInput")
 const btnPassGen = document.getElementById('btnPassGen')
-let charactersValue = 0
+const placeResult = document.getElementById('result')
+
+const actuator = btnPassGen.addEventListener('click', () => {
     
-// Eventos de escucha
-btnPassGen.addEventListener('click', () => {
-    const password = buildPassword(charactersValue)
-    const placeResult = document.getElementById('result')
-    placeResult.innerHTML = `<p>Contraseña Generada: ${password}</p>`
-})
-
-charactersInput.addEventListener('change', () =>{
-    charactersValue = parseInt(charactersInput.value)
-
+    const charactersValue = parseInt(charactersInput.value);
     if ( charactersValue < 12 || charactersValue > 50) {
         alert("El valor introducido debe estar entre 12 y 50 caracteres.");
-    }
+        return
+    }   
+    
+    const password = buildPassword(charactersValue)
+    placeResult.innerHTML = `<p>Contraseña Generada: ${password}</p>`
 })
-
-
-// Función para generar un carácter aleatorio
 
 function getRandomChar (character) {
     const index = Math.floor(Math.random() * character.length);
     return character.charAt(index);
 }
-
-// Construir la contraseña
 
 function buildPassword (charactersValue) {
     
@@ -52,12 +44,6 @@ function buildPassword (charactersValue) {
     }
     return password
 }
-
-// Al clickar en generar sin haber tocado el input, genera una contraseña de 4 caracteres,
-// porque aún no se ha introducido un valor en el input y el bucle for no opera con caractersValue
-// MIRAR ESTO!!
-
-
 
 
 

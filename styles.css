@@ -69,6 +69,8 @@ body {
 	border-radius: 10px;
 	padding: 30px;
     gap: 20px;
+	width: 650px;
+    height: 235px;
 }
 
 .title {
@@ -194,10 +196,9 @@ body {
 	padding: 20px;
 	width: 350px;
 	height: 200px;
-	gap: 30px;
+	gap: 20px;
 	background-color: rgba(0, 0, 0, 0.355);
 	border-radius: 10px;
-	box-shadow:inset;
 }
 
 .clock {

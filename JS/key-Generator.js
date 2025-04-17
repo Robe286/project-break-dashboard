@@ -3,13 +3,13 @@ const btnPassGen = document.getElementById('btnPassGen')
 const placeResult = document.getElementById('result')
 
 const actuator = btnPassGen.addEventListener('click', () => {
-    
+
     const charactersValue = parseInt(charactersInput.value);
     if ( charactersValue < 12 || charactersValue > 50) {
         alert("El valor introducido debe estar entre 12 y 50 caracteres.");
         return
     }   
-    
+
     const password = buildPassword(charactersValue)
     placeResult.innerHTML = `<p>Contraseña Generada: ${password}</p>`
 })

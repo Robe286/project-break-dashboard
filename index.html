@@ -1,13 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="Stylesheet" href="./styles.css">
     <title>Dashboard</title>
 </head>
-<body>
+<body id="body-index">
+    <main class="main-index">
+        
+        <section id="key-gen" class="key-gen">
+            <div id="title" class="title">
+                <h2>Generador de contraseñas</h2>
+            </div>
+            <div id="form" class="form">
+                <label for="charactersInput">Número de caracteres</label>
+                <input type="number" id="charactersInput" value="12" min="12" max="50">
+                <button id="btnPassGen">Generar contraseña</button>
+                <div id="result" class="result"></div>
+            </div>
+        </section>
+        
+        <section class="digital-clock">
+            <div id="clock" class="clock"></div>
+            <div id="date" class="date"></div>
+            <div id="tip" class="tip"></div>
+        </section>
+
+        <section id="linkForm" class="linkForm">
+            <div id="link-container" class="link-container">
+                <div class="link-title">
+                    <h1>Crea tu lista de Enlaces</h1>
+                </div>
+                <div id="link-input" class="link-input">
+                    <input id="inputTitle" type="text" placeholder="Escribe un título para la URL" name="inputTitle" value="" required>
+                    <input id="inputURL" type="text" placeholder="Escribe la URL" name="inputURL" value="" required>
+                    <button id="addBtn">Añadir Enlace</button>
+                </div>
+                <div id="link-list" class="link-list">
+                    <ul id="list-url" class="list-url"></ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="widget-weather" class="widget-weather">
+            <div id="currentWeather" class="currentWeather"></div>
+            <ul id="forecastWeather" class="forecastWeather"></ul>
+        </section>
+
+    </main>
     <script src="./JS/script.js"></script>
     <script src="./JS/key-Generator.js"></script>
+    <script src="./JS/digital-clock.js"></script>
+    <script src="./JS/link-list.js"></script>
+    <script src="./JS/Widget-Weather.js"></script>
 </body>
 </html>

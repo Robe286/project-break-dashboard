@@ -49,6 +49,11 @@ table {
 body {
 	font-family: "Roboto", sans-serif;
 	font-weight: 300;
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	transition: all 1s ease;
 }
 
 .main {

@@ -63,6 +63,11 @@ body {
 	min-height: 100vh;
 }
 
+footer nav {
+	background-color: red;
+	color: rgb(40, 238, 109);
+}
+
 /* Generador de contraseñas */
 
 .key-gen {
@@ -190,7 +195,6 @@ body {
 	display: grid;
 	place-items: center;
 	height: 100vh;
-	background-color: grey;
 }
 
 .digital-clock {

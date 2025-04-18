@@ -9,7 +9,13 @@
 <body id="body-index">
     <main class="main-index">
         
-        <section id="key-gen" class="key-gen">
+        <section class="digital-clock">
+            <div id="clock" class="clock"></div>
+            <div id="date" class="date"></div>
+            <div id="tip" class="tip"></div>
+        </section>    
+        
+    <section id="key-gen" class="key-gen">
             <div id="title" class="title">
                 <h2>Generador de contraseñas</h2>
             </div>
@@ -19,12 +25,6 @@
                 <button id="btnPassGen">Generar contraseña</button>
                 <div id="result" class="result"></div>
             </div>
-        </section>
-        
-        <section class="digital-clock">
-            <div id="clock" class="clock"></div>
-            <div id="date" class="date"></div>
-            <div id="tip" class="tip"></div>
         </section>
 
         <section id="linkForm" class="linkForm">
@@ -47,7 +47,15 @@
             <div id="currentWeather" class="currentWeather"></div>
             <ul id="forecastWeather" class="forecastWeather"></ul>
         </section>
-
+        
+        <footer class="footer">
+            <nav>
+              <a href="./digital-clock.html"><img src="./images/reloj.png" alt="clock"></a>
+              <a href="./key-generator.html"><img src="./images/candado.png" alt="lock"></a>
+              <a href="./link-list.html"><img src="./images/enlace.png" alt="link"></a>
+              <a href="./Widget-Weather.html"><img src="./images/nube.png" alt="cloud"></a>
+            </nav>
+        </footer>
     </main>
     <script src="./JS/script.js"></script>
     <script src="./JS/key-Generator.js"></script>

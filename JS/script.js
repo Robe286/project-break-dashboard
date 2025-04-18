@@ -15,14 +15,13 @@ const images = [
     "./images/newyork.jpg",
     "./images/phuket.jpg",
     "./images/ricegardens.jpg",
-    "./images/royalTemple.jpg",
     "./images/street.jpg",
     "./images/temple.jpg",
     "./images/thaiBeach.jpg",
     "./images/thaiBoat.jpg",
     "./images/thaiIslands.jpg",
-    "./images/thaiMarket.jpg",
-    "./images/thaiStreet.jpg",
+    "./images/japanStreetNight.jpg",
+    "./images/newYorkCity.jpg"
 ]
 
 const randomBackground = () => {
